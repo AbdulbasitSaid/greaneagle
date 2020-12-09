@@ -21,6 +21,7 @@ module.exports = {
         btn_apply: '#455065',
         bg_color: '#FBFBFB',
         bg_gray: '#F6F6F6',
+        text_gray: '#455065',
       },
     },
   },

@@ -124,7 +124,7 @@
               </svg>
             </div>
             <div class="col-span-2 font-bold">My Cart</div>
-            <div class="row-span-2 text-sm">0 Items $0.00</div>
+            <div class="row-span-2 text-xs">0 Items $0.00</div>
           </div>
           <!-- end -->
 
@@ -148,12 +148,42 @@
               <!-- end -->
             </div>
             <div class="col-span-2 font-bold">My Account</div>
-            <div class="row-span-2 text-sm">Register & Login</div>
+            <div class="row-span-2 text-xs">Register & Login</div>
           </div>
           <!-- end -->
         </div>
       </div>
-      <div class="h-14 bg-primary"></div>
+      <div class="h-14 bg-primary flex items-center px-8 text-white">
+        <div class="border-r-2 border-gray-500 h-full flex items-center">
+          <div class="w-6 h-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </div>
+          <div class="px-6">Categories</div>
+        </div>
+        <!--  -->
+        <div class="flex px-4 space-x-6 text-sm">
+          <p>Mechcanical</p>
+          <p>Systems and solutions</p>
+          <p>Electrical</p>
+          <p>Electronics</p>
+          <p>Power supplies</p>
+          <p>Other</p>
+          <p>Shop by brands</p>
+        </div>
+        <!--  -->
+      </div>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-48 w-screen text-gray-500">
+    <div class="w-screen text-gray-500">
       <div class="w-screen bg-bg_pop_up">
         <div
           class="h-12 flex space-x-40 items-center content-center justify-between px-8"

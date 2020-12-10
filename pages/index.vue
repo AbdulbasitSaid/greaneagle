@@ -1,18 +1,17 @@
 <template>
   <div>
     <div class="flex-col">
-      <div class="h-96">
-        <h1>Welcome to Greaneagle</h1>
-      </div>
+      <slider></slider>
       <subscribe-now></subscribe-now>
     </div>
   </div>
 </template>
 
 <script>
+import Slider from "../components/Slider.vue";
 import SubscribeNow from "../components/SubscribeNow.vue";
 export default {
-  components: { SubscribeNow },
+  components: { SubscribeNow, Slider },
 };
 </script>
 

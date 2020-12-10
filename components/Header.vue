@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="h-48 w-screen">
+    <div class="h-48 w-screen text-gray-500">
       <div class="w-screen bg-bg_pop_up">
         <div
           class="h-12 flex space-x-40 items-center content-center justify-between px-8"
@@ -11,7 +11,7 @@
             </div>
             <div>10% discount for all first time users</div>
           </div>
-          <div class="h-6 flex divide-x divide-black space-x">
+          <div class="h-6 flex divide-x divide-gray-300 space-x">
             <div class="px-3 text-sm text-gray-500">Wishlist</div>
             <div class="px-3 text-sm text-gray-500">
               <label
@@ -104,7 +104,7 @@
           <!-- end -->
         </div>
         <!-- cart and sign in -->
-        <div class="flex flex-none h-10 text-text_gray w-80">
+        <div class="flex flex-none h-10 text-gray-500 w-80">
           <!-- my cart -->
           <div class="grid grid-rows-3 grid-flow-col gap-x-3 gap-y-5">
             <div class="row-span-3 w-8 ustify-self-center">

@@ -140,16 +140,44 @@
           <!-- end -->
 
           <!-- news teller request -->
-          <div class="text-sm font-thin">
-            Do you want to subscribe for newsletter ?
-            <!-- yes no -->
-            <div>
-              <input type="checkbox" name="yes" id="yes" />
-              <label for="yes">yes</label>
+          <div class="text-sm font-thin flex flex-col space-y-2">
+            <div>Do you want to subscribe for newsletter ?</div>
+            <div class="flex gap-4">
+              <!-- yes  -->
+              <div class="text-base">
+                <input type="checkbox" name="yes" id="yes" />
+                <label for="yes">Yes</label>
+              </div>
+              <!-- end -->
+              <!-- no  -->
+              <div class="text-base">
+                <input type="checkbox" name="yes" id="yes" />
+                <label for="yes">No</label>
+              </div>
+              <!-- end -->
             </div>
-            <!-- end -->
+            <div>
+              <!-- agree  -->
+              <div class="text-base">
+                <input type="checkbox" name="yes" id="yes" />
+                <label for="yes"
+                  >I have read and agree to the
+                  <span class="text-golden text-sm font-normal"
+                    >Privacy Policy</span
+                  ></label
+                >
+              </div>
+              <!-- end -->
+            </div>
           </div>
           <!-- end -->
+          <div class="py-4 flex justify-end">
+            <nuxt-link
+              to="account_success"
+              class="bg-primary py-2 px-6 rounded text-white"
+              >Submit</nuxt-link
+            >
+          </div>
         </div>
         <!-- end form -->
       </div>

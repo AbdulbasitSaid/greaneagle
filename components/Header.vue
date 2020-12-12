@@ -157,7 +157,7 @@
       </div>
       <div class="h-14 bg-primary flex items-center px-8 text-white">
         <div class="border-r-2 border-gray-500 h-full flex items-center">
-          <div class="w-6 h-6">
+          <div class="w-6 h-6" @click="drawer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -187,11 +187,67 @@
         <!--  -->
       </div>
     </div>
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="ease-out transition-medium"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="ease-out transition-medium"
+      leave-to-class="opacity-0"
+    >
+      <div
+        @keydown.esc="isOpen = false"
+        v-show="isOpen"
+        class="z-10 fixed inset-0 transition-opacity"
+      >
+        <div
+          @click="isOpen = false"
+          class="absolute inset-0"
+          tabindex="0"
+        ></div>
+      </div>
+    </transition>
+    <aside
+      class="transform top-0 left-0 bg-white fixed h-screen overflow-scroll ease-in-out transition-all duration-300 z-30"
+      :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
+    >
+      <side-nav></side-nav>
+    </aside>
   </div>
 </template>
 
+
 <script>
-export default {};
+import SideNav from "./SideNav.vue";
+export default {
+  components: { SideNav },
+  data() {
+    return {
+      isOpen: false,
+    };
+  },
+  methods: {
+    drawer() {
+      this.isOpen = !this.isOpen;
+    },
+  },
+  watch: {
+    isOpen: {
+      immediate: true,
+      handler(isOpen) {
+        if (process.client) {
+          if (isOpen) document.body.style.setProperty("overflow", "hidden");
+          else document.body.style.removeProperty("overflow");
+        }
+      },
+    },
+  },
+  mounted() {
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
+    });
+  },
+};
 </script>
 
 <style >

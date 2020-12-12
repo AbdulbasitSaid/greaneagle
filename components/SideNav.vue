@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     <div class="min-h-screen border-r py-6 pl-10 pr-4 flex flex-col gap-6">
       <!-- home navigations -->
       <div class="flex divide-x divide-gray-300 space-x">
@@ -282,9 +282,5 @@
   </div>
 </template>
 
-<script>
-export default {};
-</script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>;

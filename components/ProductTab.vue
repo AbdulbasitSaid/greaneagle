@@ -1,6 +1,8 @@
 <template>
-  <div v-if="isSelected" class="flex py-10">
-    <slot></slot>
+  <div v-if="isSelected">
+    <div class="grid grid-rows-6">
+      <slot></slot>
+    </div>
   </div>
 </template>
 

@@ -176,13 +176,13 @@
         </div>
         <!--  -->
         <div class="flex px-4 space-x-6 text-sm">
-          <p>Mechcanical</p>
-          <p>Systems and solutions</p>
-          <p>Electrical</p>
-          <p>Electronics</p>
-          <p>Power supplies</p>
-          <p>Other</p>
-          <p>Shop by brands</p>
+          <nuxt-link to="store">Mechcanical</nuxt-link>
+          <nuxt-link to="store">Systems and solutions</nuxt-link>
+          <nuxt-link to="store">Electrical</nuxt-link>
+          <nuxt-link to="store">Electronics</nuxt-link>
+          <nuxt-link to="store">Power supplies</nuxt-link>
+          <nuxt-link to="store">Other</nuxt-link>
+          <nuxt-link to="store">Shop by brands</nuxt-link>
         </div>
         <!--  -->
       </div>

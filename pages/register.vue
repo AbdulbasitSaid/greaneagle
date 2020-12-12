@@ -182,7 +182,6 @@
         <!-- end form -->
       </div>
     </div>
-    <subscribe-now></subscribe-now>
   </div>
 </template>
 

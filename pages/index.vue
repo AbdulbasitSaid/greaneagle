@@ -11,7 +11,6 @@
           <products></products>
         </div>
       </div>
-      <subscribe-now></subscribe-now>
     </div>
   </div>
 </template>

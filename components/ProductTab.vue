@@ -1,6 +1,6 @@
 <template>
   <div v-if="isSelected">
-    <div class="grid grid-rows-6">
+    <div class="grid grid-cols-4 gap-6 py-20">
       <slot></slot>
     </div>
   </div>

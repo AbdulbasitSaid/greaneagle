@@ -148,7 +148,9 @@
               <!-- end -->
             </div>
             <div class="col-span-2 font-bold">My Account</div>
-            <div class="row-span-2 text-xs">Register & Login</div>
+            <NuxtLink to="register" class="row-span-2 text-xs"
+              >Register & Login</NuxtLink
+            >
           </div>
           <!-- end -->
         </div>

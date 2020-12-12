@@ -7,7 +7,7 @@
         <div class="flex-col">
           <product-list-title>Explore our categories</product-list-title>
           <products></products>
-          <product-list-title>Best deals</product-list-title>
+          <product-list-title>Best deals </product-list-title>
           <products></products>
         </div>
       </div>

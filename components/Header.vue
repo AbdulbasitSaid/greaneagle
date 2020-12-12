@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-white z-10">
     <div class="w-screen text-gray-500">
       <div class="w-screen bg-bg_pop_up">
         <div

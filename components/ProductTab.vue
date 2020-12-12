@@ -1,5 +1,5 @@
 <template>
-  <div v-if="isSelected">
+  <div v-if="isSelected" class="flex py-10">
     <slot></slot>
   </div>
 </template>

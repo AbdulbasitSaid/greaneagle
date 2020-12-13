@@ -1,5 +1,31 @@
 <template>
   <div>
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="ease-out transition-medium"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="ease-out transition-medium"
+      leave-to-class="opacity-0"
+    >
+      <div
+        @keydown.esc="isOpen = false"
+        v-show="isOpen"
+        class="z-10 fixed inset-0 transition-opacity"
+      >
+        <div
+          @click="isOpen = false"
+          class="absolute inset-0 bg-black opacity-25"
+          tabindex="0"
+        ></div>
+      </div>
+    </transition>
+    <div
+      class="transform top-0 right-0 fixed h-screen overflow-scroll ease-in-out transition-all duration-300 z-30"
+      :class="!isOpen ? ' translate-x-96' : '-translate-x-0'"
+    >
+      <add-review></add-review>
+    </div>
     <!-- image page -->
     <div class="py-10 px-20 flex flex-col">
       <div class="flex justify-between">
@@ -121,9 +147,9 @@
               />
             </svg>
             4 Reviews
-            <nuxt-link to="/" class="underline text-primary"
-              >Write a review</nuxt-link
-            >
+            <div @click="drawer" class="underline text-primary">
+              Write a review
+            </div>
           </div>
           <div class="text-gray-500">Description</div>
           <div>
@@ -344,6 +370,7 @@
                 type="button"
                 value="Write a review"
                 class="rounded border py-2 px-6 inline-block bg-white"
+                @click="drawer"
               />
             </div>
           </div>
@@ -498,19 +525,39 @@
 </template>
 
 <script>
+import AddReview from "../components/AddReview.vue";
 import FourStars from "../components/FourStars.vue";
 import ProductDetailsNav from "../components/ProductDetailsNav.vue";
 import ProductDetialsTab from "../components/ProductDetialsTab.vue";
 import Products from "../components/Products.vue";
 export default {
-  components: { ProductDetialsTab, FourStars, Products },
+  components: { ProductDetialsTab, FourStars, Products, AddReview },
   data() {
-    return { selected: "Review (4)" };
+    return { selected: "Review (4)", isOpen: false };
   },
   methods: {
     setSelected(tab) {
       this.selected = tab;
     },
+    drawer() {
+      this.isOpen = !this.isOpen;
+    },
+  },
+  watch: {
+    isOpen: {
+      immediate: true,
+      handler(isOpen) {
+        if (process.client) {
+          if (isOpen) document.body.style.setProperty("overflow", "hidden");
+          else document.body.style.removeProperty("overflow");
+        }
+      },
+    },
+  },
+  mounted() {
+    document.addEventListener("keydown", (e) => {
+      if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
+    });
   },
 };
 </script>

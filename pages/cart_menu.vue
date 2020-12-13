@@ -188,7 +188,7 @@
 
         <div class="flex justify-end py-10">
           <nuxt-link
-            to="check_out"
+            to="checkout"
             class="rounded bg-primary text-white py-2 px-4"
             >Checkout as guest</nuxt-link
           >

@@ -16,6 +16,7 @@ module.exports = {
         primary: '#2AA580',
         from_black_gradient: '#222222',
         to_black_gradient: '#1a222222',
+        checkout_bg: '#FBFBFB',
         btn_pop_up: '#EE8434',
         bg_pop_up: '#FFF3EB',
         bg_footer: '#2B2D42',

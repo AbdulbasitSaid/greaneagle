@@ -1,23 +1,17 @@
 <template>
   <div class="">
-    <ul class="flex gap-6 text-gray-500 font-light border-t border-b">
+    <ul
+      class="flex items-center justify-center gap-6 text-gray-500 font-light bg-bg_gray my-4"
+    >
       <li v-for="tab in tabs" :key="tab">
         <div
           :class="{
-            'border-t-4 border-green-400': tab === selected,
+            'border-b-4 border-green-400': tab === selected,
           }"
           @click="setTab(tab)"
           class="py-4"
         >
-          <div
-            :tabs="[
-              'Mechanical Parts',
-              'Electrical Parts',
-              'Electronics',
-              'Power supplies',
-              'Systems & solutions',
-            ]"
-          >
+          <div :tabs="['Description', 'Review (4)']">
             {{ tab }}
           </div>
         </div>

@@ -106,7 +106,10 @@
         <!-- cart and sign in -->
         <div class="flex flex-none h-10 text-gray-500 w-80">
           <!-- my cart -->
-          <div class="grid grid-rows-3 grid-flow-col gap-x-3 gap-y-5">
+          <div
+            @click="showCart"
+            class="grid grid-rows-3 grid-flow-col gap-x-3 gap-y-5"
+          >
             <div class="row-span-3 w-8 ustify-self-center">
               <!-- cart icon -->
               <svg
@@ -213,6 +216,147 @@
     >
       <side-nav></side-nav>
     </aside>
+
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="ease-out transition-medium"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="ease-out transition-medium"
+      leave-to-class="opacity-0"
+    >
+      <div
+        @keydown.esc="isCartSelected = false"
+        v-show="isCartSelected"
+        class="z-10 fixed inset-0 transition-opacity"
+      >
+        <div
+          @click="isCartSelected = false"
+          class="absolute inset-0"
+          tabindex="0"
+        ></div>
+      </div>
+    </transition>
+    <div
+      class="transform top-0 right-12 bg-white fixed overflow-scroll ease-in-out transition-all duration-300 z-30"
+      :class="isCartSelected ? 'translate-y-28' : '-translate-y-full'"
+    >
+      <div class="w-96 flex flex-col p-10">
+        <div class="flex items-center justify-between">
+          <div>My Cart</div>
+          <div>
+            <svg
+              width="21"
+              height="20"
+              viewBox="0 0 21 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                x="4.69678"
+                y="14.1248"
+                width="13.3333"
+                height="1.66667"
+                rx="0.833333"
+                transform="rotate(-45 4.69678 14.1248)"
+                fill="#2AA580"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5.28574 5.28595C5.61118 4.96052 6.13882 4.96052 6.46426 5.28595L14.7138 13.5355C15.0393 13.861 15.0393 14.3886 14.7138 14.714C14.3884 15.0395 13.8608 15.0395 13.5353 14.714L5.28574 6.46447C4.96031 6.13903 4.96031 5.61139 5.28574 5.28595Z"
+                fill="#2AA580"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- cart item -->
+        <div class="border-b">
+          <div class="grid grid-rows-3 grid-flow-col gap-2 p-2">
+            <div class="row-span-3">
+              <img
+                src="~/assets/images/product1.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </div>
+            <div class="row-span-1 text-lg">$390.00</div>
+            <div class="row-span-2">
+              <div class="font-thin">General Electric V07106 …</div>
+              <div class="font-thin flex items-center justify-between">
+                <div>Quantity: 1</div>
+                <div>
+                  <svg
+                    width="11"
+                    height="14"
+                    viewBox="0 0 11 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8.25 0.777778L7.46429 0H3.53571L2.75 0.777778H0V2.33333H11V0.777778H8.25ZM0.785714 12.4444C0.785714 13.3 1.49286 14 2.35714 14H8.64286C9.50714 14 10.2143 13.3 10.2143 12.4444V3.11111H0.785714V12.4444ZM8.64286 4.66667H2.35714V12.4444H8.64286V4.66667Z"
+                      fill="#FE5F55"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+        <!-- cart item -->
+        <div class="border-b">
+          <div class="grid grid-rows-3 grid-flow-col gap-2 p-2">
+            <div class="row-span-3">
+              <img
+                src="~/assets/images/product2.png"
+                alt=""
+                class="h-full w-full"
+              />
+            </div>
+            <div class="row-span-1 text-lg">$390.00</div>
+            <div class="row-span-2">
+              <div class="font-thin">General Electric V07106 …</div>
+              <div class="font-thin flex items-center justify-between">
+                <div>Quantity: 1</div>
+                <div>
+                  <svg
+                    width="11"
+                    height="14"
+                    viewBox="0 0 11 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M8.25 0.777778L7.46429 0H3.53571L2.75 0.777778H0V2.33333H11V0.777778H8.25ZM0.785714 12.4444C0.785714 13.3 1.49286 14 2.35714 14H8.64286C9.50714 14 10.2143 13.3 10.2143 12.4444V3.11111H0.785714V12.4444ZM8.64286 4.66667H2.35714V12.4444H8.64286V4.66667Z"
+                      fill="#FE5F55"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end -->
+
+        <!-- subtotal -->
+        <div class="flex items-center justify-between py-4">
+          <div class="font-thin">Sub-total</div>
+          <div class="font-bold">$980.05</div>
+        </div>
+        <!-- end -->
+        <!-- view cart check out -->
+        <div class="flex items-center justify-evenly py-4">
+          <div class="bg-primary rounded text-white py-2 px-6">View Cart</div>
+          <div class="border rounded py-2 px-6">Checkout</div>
+        </div>
+        <!-- end -->
+      </div>
+    </div>
   </div>
 </template>
 
@@ -224,11 +368,15 @@ export default {
   data() {
     return {
       isOpen: false,
+      isCartSelected: false,
     };
   },
   methods: {
     drawer() {
       this.isOpen = !this.isOpen;
+    },
+    showCart() {
+      this.isCartSelected = !this.isCartSelected;
     },
   },
   watch: {
@@ -241,10 +389,25 @@ export default {
         }
       },
     },
+    isCartSelected: {
+      immediate: true,
+      handler(isCartSelected) {
+        if (process.client) {
+          if (isCartSelected)
+            document.body.style.setProperty("overflow", "hidden");
+          else document.body.style.removeProperty("overflow");
+        }
+      },
+    },
   },
   mounted() {
     document.addEventListener("keydown", (e) => {
-      if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
+      if (e.keyCode == 27 && this.isOpen) {
+        this.isOpen = false;
+      }
+      if (e.keyCode == 27 && this.isCartSelected) {
+        this.isCartSelected = false;
+      }
     });
   },
 };

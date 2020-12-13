@@ -351,7 +351,11 @@
         <!-- end -->
         <!-- view cart check out -->
         <div class="flex items-center justify-evenly py-4">
-          <div class="bg-primary rounded text-white py-2 px-6">View Cart</div>
+          <nuxt-link
+            to="cart_menu"
+            class="bg-primary rounded text-white py-2 px-6"
+            >View Cart</nuxt-link
+          >
           <div class="border rounded py-2 px-6">Checkout</div>
         </div>
         <!-- end -->

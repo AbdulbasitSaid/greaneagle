@@ -166,22 +166,7 @@
             V07106
           </div>
           <div class="flex items-center gap-10">
-            <!-- increase -->
-            <div class="flex space-x-2">
-              <input
-                type="button"
-                value="-"
-                class="border p-4 bg-white rounded"
-              />
-              <div class="border p-4 bg-white rounded">1</div>
-
-              <input
-                type="button"
-                value="+"
-                class="border p-4 bg-white rounded"
-              />
-            </div>
-            <!-- end  -->
+            <increase></increase>
             <div class="rounded bg-primary py-4 px-6 text-white">
               Request quote
             </div>
@@ -527,11 +512,12 @@
 <script>
 import AddReview from "../components/AddReview.vue";
 import FourStars from "../components/FourStars.vue";
+import Increase from "../components/Increase.vue";
 import ProductDetailsNav from "../components/ProductDetailsNav.vue";
 import ProductDetialsTab from "../components/ProductDetialsTab.vue";
 import Products from "../components/Products.vue";
 export default {
-  components: { ProductDetialsTab, FourStars, Products, AddReview },
+  components: { ProductDetialsTab, FourStars, Products, AddReview, Increase },
   data() {
     return { selected: "Review (4)", isOpen: false };
   },

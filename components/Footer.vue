@@ -21,7 +21,7 @@
       <div class="flex pt-20 justify-between">
         <div class="flex-col space-y-2">
           <div class="text-lg pb-2">About Us</div>
-          <p>About Us</p>
+          <p><nuxt-link to="about"> About Us </nuxt-link></p>
           <p>Customer Service</p>
           <p>Feedback</p>
           <!-- social icons -->

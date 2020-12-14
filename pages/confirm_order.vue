@@ -58,7 +58,7 @@
     </div>
     <!-- end -->
 
-    <div class="py-2 px-20">
+    <div class="py-6 px-20 flex flex-col gap-8">
       <!-- card -->
       <div class="py-6 px-2 flex flex-col bg-white gap-6">
         <div class="px-12 text-lg">
@@ -135,7 +135,55 @@
       <!-- end card -->
 
       <!-- second card -->
+      <div class="py-6 px-12 grid grid-cols-2 bg-white gap-20">
+        <!-- infor item -->
+        <div class="font-thin flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b py-4">
+            <p class="font-normal">Your information</p>
+            <input type="button" value="Edit" class="bg-white text-primary" />
+          </div>
+          <div class="space-y-2">
+            <p class="font-normal">Jude Ejike</p>
+            <p>newjutla@ha.com</p>
+            <p>(357) 734-5280</p>
+          </div>
+        </div>
+        <!--end  -->
+
+        <!-- infor item -->
+        <div class="font-thin flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b py-4">
+            <p class="font-normal">Card information</p>
+            <input type="button" value="Edit" class="bg-white text-primary" />
+          </div>
+          <div class="space-y-2">
+            <p>Visa card ending with 5600</p>
+          </div>
+        </div>
+        <!--end  -->
+        <!-- infor item -->
+        <div class="font-thin flex flex-col gap-4">
+          <div class="flex items-center justify-between border-b py-4">
+            <p class="font-normal">Shipping address</p>
+            <input type="button" value="Edit" class="bg-white text-primary" />
+          </div>
+          <div class="space-y-2">
+            <p class="font-normal">Jude Ejike</p>
+            <p>5 Adediran Ajao cresent</p>
+            <p>Anthony Village</p>
+            <p>Lagos, Nigeria.</p>
+          </div>
+        </div>
+        <!--end  -->
+      </div>
       <!-- end second card -->
+      <div class="flex items-center gap-4 justify-end">
+        <p>
+          Can you confrirm that you have gone through your order and wish to
+          proceed ?
+        </p>
+        <primary-button-rounded>Make payment</primary-button-rounded>
+      </div>
     </div>
   </div>
 </template>

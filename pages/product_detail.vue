@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- add review -->
     <transition
       enter-class="opacity-0"
       enter-active-class="ease-out transition-medium"
@@ -26,6 +27,35 @@
     >
       <add-review></add-review>
     </div>
+    <!-- end -->
+    <!-- requestQuote -->
+    <transition
+      enter-class="opacity-0"
+      enter-active-class="ease-out transition-medium"
+      enter-to-class="opacity-100"
+      leave-class="opacity-100"
+      leave-active-class="ease-out transition-medium"
+      leave-to-class="opacity-0"
+    >
+      <div
+        @keydown.esc="isRequestQuote = false"
+        v-show="isRequestQuote"
+        class="z-10 fixed inset-0 transition-opacity"
+      >
+        <div
+          @click="isRequestQuote = false"
+          class="absolute inset-0 bg-black opacity-25"
+          tabindex="0"
+        ></div>
+      </div>
+    </transition>
+    <div
+      class="transform top-0 right-0 fixed h-screen overflow-scroll ease-in-out transition-all duration-300 z-30"
+      :class="!isRequestQuote ? ' translate-x-96' : '-translate-x-0'"
+    >
+      <request-quote></request-quote>
+    </div>
+    <!-- end  -->
     <!-- image page -->
     <div class="py-10 px-20 flex flex-col">
       <div class="flex justify-between">
@@ -167,7 +197,10 @@
           </div>
           <div class="flex items-center gap-10">
             <increase></increase>
-            <div class="rounded bg-primary py-4 px-6 text-white">
+            <div
+              @click="requestQuote"
+              class="rounded bg-primary py-4 px-6 text-white"
+            >
               Request quote
             </div>
           </div>
@@ -519,7 +552,7 @@ import Products from "../components/Products.vue";
 export default {
   components: { ProductDetialsTab, FourStars, Products, AddReview, Increase },
   data() {
-    return { selected: "Review (4)", isOpen: false };
+    return { selected: "Review (4)", isOpen: false, isRequestQuote: false };
   },
   methods: {
     setSelected(tab) {
@@ -527,6 +560,9 @@ export default {
     },
     drawer() {
       this.isOpen = !this.isOpen;
+    },
+    requestQuote() {
+      this.isRequestQuote = !this.isRequestQuote;
     },
   },
   watch: {
@@ -538,11 +574,23 @@ export default {
           else document.body.style.removeProperty("overflow");
         }
       },
+      handler(isRequestQuote) {
+        if (process.client) {
+          if (isRequestQuote)
+            document.body.style.setProperty("overflow", "hidden");
+          else document.body.style.removeProperty("overflow");
+        }
+      },
     },
   },
   mounted() {
     document.addEventListener("keydown", (e) => {
-      if (e.keyCode == 27 && this.isOpen) this.isOpen = false;
+      if (e.keyCode == 27 && this.isOpen) {
+        this.isOpen = false;
+      }
+      if (e.keyCode == 27 && this.isRequestQuote) {
+        this.isRequestQuote = false;
+      }
     });
   },
 };

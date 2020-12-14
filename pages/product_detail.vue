@@ -124,13 +124,29 @@
         </div>
       </div>
       <div class="w-full flex items-start justify-center min-h-96 py-10 px-20">
-        <div class="w-3/5 flex-none">
+        <div class="w-3/5 flex-none flex gap-10">
           <div class="flex flex-col gap-6">
-            <div class="border w-16 h-24 border-primary"></div>
-            <div class="border w-16 h-24 border-gray-100"></div>
-            <div class="border w-16 h-24 border-gray-50"></div>
+            <div class="border w-24 h-32 border-primary">
+              <img src="/product.jpg" alt="" class="h-full w-full" />
+            </div>
+            <div class="border w-24 h-32 border-gray-100">
+              <img src="/product.jpg" alt="" class="h-full w-full" />
+            </div>
+            <div class="border w-24 h-32 border-gray-50">
+              <img src="/product.jpg" alt="" class="h-full w-full" />
+            </div>
+          </div>
+          <div
+            class="w-96 h-full flex items-center justify-center top-0 left-0 right-0 bottom-0"
+          >
+            <div>
+              <img
+                src="https://www.distrelec.biz/Web/WebShopImages/landscape_large/4-/01/Siemens-5SL4306-6-30137424-01.jpg"
+              />
+            </div>
           </div>
         </div>
+
         <!-- text -->
         <div class="flex flex-col justify-start gap-4">
           <div class="flex items-center gap-2 text-sm">
@@ -457,7 +473,7 @@
                 </svg>
               </div>
               <div class="flex flex-col gap-4">
-                <div class="flex items-center">Edith Carr</div>
+                <div class="flex items-center">Edith Car</div>
                 <four-stars></four-stars>
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -596,5 +612,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style  scoped>
+img {
+  background-size: cover;
+}
 </style>

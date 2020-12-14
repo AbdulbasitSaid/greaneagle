@@ -388,7 +388,9 @@
           </div>
 
           <div class="flex items-center justify-end py-6">
-            <primary-button-rounded>Checkout</primary-button-rounded>
+            <nuxt-link to="confirm_order">
+              <primary-button-rounded>Checkout</primary-button-rounded>
+            </nuxt-link>
           </div>
         </div>
 

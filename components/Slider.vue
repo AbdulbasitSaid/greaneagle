@@ -1,10 +1,10 @@
 <template>
   <div>
     <div
-      class="pt-10 pb-20 px-10 w-screen bg-gradient-to-br from-from_black_gradient to-to_black_gradient text-white text-sm"
+      class="slider pt-10 pb-20 px-10 w-screen bg-gradient-to-br from-from_black_gradient to-to_black_gradient h-96 text-white text-sm"
     >
       <!-- Slide item -->
-      <div class="flex-col items-center space-y-6">
+      <!-- <div class="flex-col items-center space-y-6">
         <div class="flex items-center gap-2 my-4">
           <div class="py-1 px-2 rounded-2xl bg-primary">SALES!</div>
           <div class="">14% discount Off all Electronic Items</div>
@@ -17,7 +17,7 @@
             SHOP NOW
           </div>
         </div>
-      </div>
+      </div> -->
       <!-- end slide item -->
     </div>
   </div>
@@ -28,4 +28,9 @@ export default {};
 </script>
 
 <style>
+.slider {
+  background-image: url("/bg.png");
+  background-position: center top;
+  background-size: cover;
+}
 </style>

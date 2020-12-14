@@ -215,10 +215,13 @@
             <increase></increase>
             <div
               @click="requestQuote"
-              class="rounded bg-primary py-4 px-6 text-white"
+              class="rounded bg-primary py-4 px-6 flex-none text-white"
             >
               Request quote
             </div>
+            <nuxt-link to="compair_product" class="border-2 rounded p-4"
+              >Compare</nuxt-link
+            >
           </div>
         </div>
       </div>

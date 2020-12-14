@@ -54,6 +54,9 @@
       <div
         class="h-20 flex content-center items-center justify-end px-10 space-x-10"
       >
+        <nuxt-link to="/">
+          <img src="/logo.png" alt="" />
+        </nuxt-link>
         <!-- search bar -->
         <div class="h-10 border w-7/12 flex content-center rounded">
           <!-- dropdown -->

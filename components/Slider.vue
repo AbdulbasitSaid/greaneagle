@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      class="slider pt-10 pb-20 px-10 w-screen bg-gradient-to-br from-from_black_gradient to-to_black_gradient h-96 text-white text-sm"
+      class="slider pt-10 pb-20 px-10 w-screen bg-gradient-to-br from-from_black_gradient to-to_black_gradient text-white text-sm"
     >
       <!-- Slide item -->
       <!-- <div class="flex-col items-center space-y-6">
@@ -29,6 +29,7 @@ export default {};
 
 <style>
 .slider {
+  height: 500px;
   background-image: url("/bg.png");
   background-position: center top;
   background-size: cover;

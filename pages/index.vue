@@ -1,19 +1,23 @@
 <template>
-  <div class="overflow-x-hidden">
-    <div class="flex">
-      <div class="flex-col">
-        <slider></slider>
-        <features></features>
-        <div class="p-12">
+  <div>
+    <main>
+      <div class="overflow-x-hidden">
+        <div class="flex">
           <div class="flex-col">
-            <product-list-title>Explore our categories</product-list-title>
-            <products></products>
-            <product-list-title>Best deals </product-list-title>
-            <products></products>
+            <slider></slider>
+            <features></features>
+            <div class="p-12">
+              <div class="flex-col">
+                <product-list-title>Explore our categories</product-list-title>
+                <products></products>
+                <product-list-title>Best deals </product-list-title>
+                <products></products>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
